@@ -1,0 +1,299 @@
+/* ====== BASE ====== */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: calc(80px + 2em) 0 2em 0;
+  box-sizing: border-box;
+  background: #181818;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: #333;
+  color: #fff;
+  border-radius: 16px;
+  position: fixed;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95vw;
+  max-width: 1200px;
+  text-align: center;
+  box-shadow: 0 4px 24px #0008;
+  z-index: 1000;
+  margin: 0 auto;
+  padding: 1.5em 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-title h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.logo-svg {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+/* ====== NAVIGATION ====== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a:hover {
+  color: #ffd700;
+}
+
+.nav-svg {
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* ====== GRID & CARDS ====== */
+.grid-container {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px 16px 0 16px;
+}
+
+.box {
+  background: transparent;
+  border-radius: 20px;
+  perspective: 1000px;
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== FLIP CARD ====== */
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  background: transparent;
+}
+
+.box:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding: 24px 12px;
+}
+
+.flip-card-front {
+  background: #FDFBD4;
+}
+
+.flip-card-back {
+  background: #FDFBD4;
+  transform: rotateY(180deg);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ====== SHOE IMAGE & INFO ====== */
+.shoe-img {
+  width: 100%;
+  max-width: 180px;
+  margin-bottom: 18px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Imagens diferentes para cada card */
+.grid-container .box:nth-child(1) .shoe-img {
+  content: url('https://www.copclub.com.br/cdn/shop/files/2c17a8ff-4964-4596-91ae-7c4f589caca4.png?v=1729187782');
+}
+.grid-container .box:nth-child(2) .shoe-img {
+  content: url('https://www.copclub.com.br/cdn/shop/files/2c17a8ff-4964-4596-91ae-7c4f589caca4.png?v=1729187782');
+}
+.grid-container .box:nth-child(3) .shoe-img {
+  content: url('https://sneakersul.com.br/cdn/shop/files/nike-dunk-low-valentines-day-2024-1.webp?v=1712063139&width=2048');
+}
+.grid-container .box:nth-child(4) .shoe-img,
+.grid-container .box:nth-child(5) .shoe-img,
+.grid-container .box:nth-child(6) .shoe-img,
+.grid-container .box:nth-child(7) .shoe-img {
+  content: url('https://sneakersul.com.br/cdn/shop/files/nike-dunk-low-valentines-day-2024-1.webp?v=1712063139&width=2048');
+}
+.grid-container .box:nth-child(8) .shoe-img,
+.grid-container .box:nth-child(9) .shoe-img {
+  content: url('https://www.copclub.com.br/cdn/shop/files/2c17a8ff-4964-4596-91ae-7c4f589caca4.png?v=1729187782');
+}
+
+.shoe-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.shoe-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #181818;
+}
+
+.shoe-price {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffd700;
+}
+
+/* ====== FLIP CARD BACK CONTENT ====== */
+.shoe-title-back {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #181818;
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-cart-btn {
+  background: #fff;
+  color: #181818;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px #0004;
+}
+
+.add-cart-btn:hover {
+  background: #aaa9a9;
+  color: #000;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 700px) {
+  body {
+    padding: calc(60px + 1em) 0 1em 0;
+  }
+  header {
+    font-size: 1.1rem;
+    padding: 1em 0;
+    width: 98vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .grid-container {
+    margin-top: 1em;
+    grid-template-columns: 1fr;
+    padding: 24px 4px 0 4px;
+  }
+  .box {
+    min-height: 200px;
+  }
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 8px;
+  }
+  .nav-links {
+    gap: 12px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .site-title {
+    gap: 8px;
+  }
+}
